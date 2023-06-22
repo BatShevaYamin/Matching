@@ -1,19 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const collectorService = require('../services/collectorService');
 
 //get all collectors With They Donation
-router.get('/', (req, res) => {
+router.get('/', async(req, res) => {
     //פונה לטבלת מתרימים, ועבור כל מתרים שולף גם את התרומות שלו ומציג הכל
-    res.send("our collectors");
+    res.send(await collectorService.getAllCollectors());
+    // res.send("our collectors");
 })
 
-//add donation
-router.post('/addDonation', (req, res) => {
-    //מקבל אובייקט תרומה ומכניס לטבלה
-    //מעדכן גם את היעד הנוכחי
-    //מעדכן את היעד האישי של המתרים
-    res.send('new donation added!!')
-})
 
 //UpdatePersonalTarget(By ID)
 router.put('/UpdatePersonalTarget/:id', (req, res) => {

@@ -1,11 +1,14 @@
-const mongooose = require('mongoose');
-const collectorsSchema = mongooose.Schema({
-    id: String,
+const mongoose = require('mongoose');
+
+const collectorSchema = mongoose.Schema({
     name: String,
-    group : Object,
+    groupId : String,
     target : Number,
     currentTarget: Number
 
-});
-const collectors = new mongoose.model('collectors', collectorsSchema);
-module.exports = { collectors };
+}, {collection: "Collectors"});
+
+//לבדוק האם זה באות קטנה כי ככה הוא ניגש לקולקשיין או צריך באות גדולה סתם
+//ואם כן לשנות פה ובהתאמה באטלס
+const Collector = new mongoose.model('Collectors', collectorSchema);
+module.exports = { Collector };

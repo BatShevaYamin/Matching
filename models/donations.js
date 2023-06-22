@@ -3,8 +3,8 @@ const donationsSchema = mongooose.Schema({
     donorName: String,
     sum : Number,
     donationMethod : String,
-    collector: Object
+    collectorId: String
 
 });
-const donations = new mongoose.model('donations', donationsSchema);
-module.exports = { donations };
+const Donation = new mongoose.model('donations', donationsSchema);
+module.exports = { Donation };

@@ -1,10 +1,9 @@
 const { list } = require('cowsay');
 const mongooose = require('mongoose');
 const groupsSchema = mongooose.Schema({
-    id: Number,
     name : String,
-    listOfCollectors: Array[{}]
+    listOfCollectors: Array[String]
 
 });
-const groups = new mongoose.model('groups', groupsSchema);
-module.exports = { groups };
+const Group = new mongoose.model('groups', groupsSchema);
+module.exports = { Group };
