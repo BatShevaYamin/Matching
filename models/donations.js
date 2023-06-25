@@ -6,6 +6,6 @@ const donationSchema = mongoose.Schema({
     donationMethod : String,
     collectorId: String
 
-});
+}, {collection: "Donations"});
 const Donation = new mongoose.model('Donations', donationSchema);
 module.exports = { Donation };
