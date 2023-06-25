@@ -11,7 +11,9 @@ router.get('/', async(req, res) => {
 
 
 //UpdatePersonalTarget(By ID)
-router.put('/UpdatePersonalTarget/:id', (req, res) => {
+router.put('/UpdatePersonalTarget/:id/:target', async(req, res) => {
+    res.send(await collectorService.UpdatePersonalTarget(id,target))
+
     //בודק עפי התז אם מדובר באדמין- מעדכן את היעד הכללי ואם לא- את היעד האישי
     res.send("personal target updeted succesfully!")
 })
