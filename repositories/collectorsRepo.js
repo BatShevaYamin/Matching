@@ -12,16 +12,24 @@ class CollectorsRepo {
         return collectors;
     }
 
+
     async UpdatePersonalTarget(id, target) {
+        console.log("in Repo.......");
         const update = { $set: { target: target } };
-        const condition = { id: id };
-        await Collector.updateOne(condition, update, function (err, result) {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            console.log('Target updated successfully');
-        })
+        const filter = { _id: id };
+        console.log("in Repo2.......");
+        
+
+        return await  Collector.updateOne(filter, update);
+        // await Collector.updateOne(filter, update, function (err, result) {
+        //     console.log("in Repo3.......");
+        //     if (err) {
+        //         console.error(err);
+        //         return;
+        //     }
+        //     console.log('Target updated successfully');
+        //     return result;
+        // })
     }
 }
 module.exports = new CollectorsRepo();

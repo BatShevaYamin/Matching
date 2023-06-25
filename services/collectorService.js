@@ -6,6 +6,7 @@ class CollectorService {
         return await collectorRepo.getAllCollectors();
     }
     async UpdatePersonalTarget(id, target) {
+        console.log("in Service.......");
         return await collectorRepo.UpdatePersonalTarget(id, target);
     }
 }
