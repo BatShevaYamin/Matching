@@ -1,2 +1,0 @@
-const {MatchingDetails} = require('../matching');
-
