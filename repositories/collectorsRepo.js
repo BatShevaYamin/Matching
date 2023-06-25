@@ -7,7 +7,9 @@ class CollectorsRepo {
         connect();
     }
     async getAllCollectors() {
-        const collectors = await Collector.find({});
+        const collectors = await Collector.aggregate([
+            {$lookup:{from:'Donation', localField:'collectorId', foreignField:'donationsList', as:'_id'}}
+        ]);
         console.log('collectors:::', collectors);
         return collectors;
     }

@@ -1,10 +1,11 @@
-const mongooose = require('mongoose');
-const donationsSchema = mongooose.Schema({
+const mongoose = require('mongoose');
+
+const donationSchema = mongoose.Schema({
     donorName: String,
     sum : Number,
     donationMethod : String,
     collectorId: String
 
 });
-const Donation = new mongoose.model('donations', donationsSchema);
+const Donation = new mongoose.model('Donations', donationSchema);
 module.exports = { Donation };

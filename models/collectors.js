@@ -4,7 +4,8 @@ const collectorSchema = mongoose.Schema({
     name: String,
     groupId : String,
     target : Number,
-    currentTarget: Number
+    currentTarget: Number,
+    donationsList: [String]
 
 }, {collection: "Collectors"});
 
