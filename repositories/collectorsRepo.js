@@ -7,11 +7,30 @@ class CollectorsRepo {
         connect();
     }
     async getAllCollectors() {
-        const collectors = await Collector.aggregate([
-            {$lookup:{from:'Donation', localField:'collectorId', foreignField:'donationsList', as:'_id'}}
-        ]);
-        console.log('collectors:::', collectors);
-        return collectors;
+            const pipeline = [
+              {
+                $lookup: {
+                  from: "Donation",
+                  localField: "_id",
+                  foreignField: "collectorId",
+                  as: "donationsList"
+                }
+              }
+            ];
+            
+            const result = await Collector.aggregate(pipeline);
+            return result;
+          
+
+
+
+
+
+        // const collectors = await Collector.aggregate([
+        //     {$lookup:{from:'Donation', localField:'collectorId', foreignField:'donationsList', as:'_id'}}
+        // ]);
+        // console.log('collectors:::', collectors);
+        // return collectors;
     }
 
 
