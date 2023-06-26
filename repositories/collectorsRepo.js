@@ -22,17 +22,12 @@ class CollectorsRepo {
             return result;
           
 
-
-
-
-
         // const collectors = await Collector.aggregate([
         //     {$lookup:{from:'Donation', localField:'collectorId', foreignField:'donationsList', as:'_id'}}
         // ]);
         // console.log('collectors:::', collectors);
         // return collectors;
     }
-
 
     async UpdatePersonalTarget(id, target) {
         console.log("in Repo.......");
