@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const MatchingSchema = mongoose.Schema({
-    name: "Yarid Bnei Hayeshivot",
+const matchingSchema = mongoose.Schema({
+    name: String,
     target: Number,
-    date : "06-08-2023",
-    hours : 200,
+    date : Date,
+    hours : Number,
 }, { collection: "MatchingDetails" });
-const MatchingDetails = new mongoose.model('MatchingDetails', MatchingSchema);
+const MatchingDetails = new mongoose.model('MatchingDetails', matchingSchema);
 module.exports = {MatchingDetails};
 

@@ -5,6 +5,9 @@ class DetailsService {
     async updateTheMainTarget(target) {
         return await detailsRepo.updateTheMainTarget(target);
     }
+    async getAllDetails() {
+        return await detailsRepo.getAllDetails();
+    }
 }
 module.exports = new DetailsService();
 

@@ -8,5 +8,11 @@ router.post('/updateMainTarget', async(req, res) => {
     res.send(await detailsService.updateTheMainTarget(target))
     // res.send('new donation added!!')
 })
+//
+router.get('/', async(req, res) => {
+    
+    res.send(await detailsService.getAllDetails())
+    // res.send('new donation added!!')
+})
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const { connect } = require('../models/db');
-const { MatchingDetails } = require('../');
+const { MatchingDetails } = require('../models/details');
 
 class DetailsRepo{
     constructor(){
@@ -7,7 +7,7 @@ class DetailsRepo{
     }
     
     async updateTheMainTarget(target){
-        var myquery = {_id:""};
+        var myquery = {_id:"64999cb0cd157f43ff14d60f"};
         var newvalues = {$set:{target : target}}
         MatchingDetails.updateOne(myquery, newvalues
         //     , function(err, res) {
@@ -16,6 +16,10 @@ class DetailsRepo{
         //     MatchingDetails.close();
         //   }
           );
+    }
+    async getAllDetails(){
+        var items = MatchingDetails.find({});
+        return items;
     }
 }
 module.exports = new DetailsRepo();
