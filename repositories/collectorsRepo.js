@@ -31,12 +31,12 @@ class CollectorsRepo {
 
     async UpdatePersonalTarget(id, target) {
         console.log("in Repo.......");
-        const update = { $set: { target: target } };
+        const update = { target: target };
         const filter = { _id: id };
         console.log("in Repo2.......");
         
 
-        return await  Collector.updateOne(filter, update);
+        return await  Collector.findOneUpdate(filter, update);
         // await Collector.updateOne(filter, update, function (err, result) {
         //     console.log("in Repo3.......");
         //     if (err) {
